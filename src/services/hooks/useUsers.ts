@@ -8,7 +8,8 @@ type User = {
     createdAt: string;
 }
 
- export async function getUsers():Promise<User[]>  {
+ export async function getUsers():Promise<User[]> {
+     
     const { data } = await api.get('users')
 
         const users = data.users.map(user => {
@@ -23,10 +24,7 @@ type User = {
                 })
             }
         })
-        
-
         return users;
-        
     }
 
 export function useUsers(){
